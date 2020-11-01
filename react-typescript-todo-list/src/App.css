@@ -71,7 +71,7 @@
   flex-grow: 1;
 }
 .todo-list-penel .list-box .todo-item{
-  padding: 10px;
+  padding: 10px 50px 10px 10px;
   display: flex;
   align-items: center;
   align-content: center;
@@ -79,6 +79,8 @@
   border-radius: 5px;
   box-shadow: 0 0 5px #ccc;
   margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
 }
 .todo-list-penel .list-box .todo-item .checkbox{
   width: 20px;
@@ -123,6 +125,24 @@
 .todo-list-penel .list-box .todo-item.done .content{
   text-decoration: line-through;
   text-decoration-style: double;
+}
+.todo-list-penel .list-box .todo-item .del{
+  display: block;
+  width: 50px;
+  height: 100%;
+  font-size: 24px;
+  color: orangered;
+  text-align: center;
+  background: antiquewhite;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.todo-list-penel .list-box .todo-item .del:before{
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 .no-record{
   height: 100px;

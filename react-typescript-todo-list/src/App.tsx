@@ -207,6 +207,15 @@ function App() {
               <span className="checkbox"></span>
               <span className="idx">{index + 1}</span>
               <span className="content">{todoItem.content}</span>
+              <a className="del" onClick={(e)=>{
+                e.stopPropagation();
+                const itemIdx = list.findIndex(item => item.id === todoItem.id);
+                list.splice(itemIdx, 1);
+                updateState({
+                  list
+                });
+                saveStore();
+              }}>×</a>
             </div>)
           }
           {/* 当当前列表没有事项时，显示提示文字 */}
