@@ -1,3 +1,4 @@
+// 将以下Js风格的代码改写成Typescript风格的代码
 
 const roleMap = {
     "student": "学生",
@@ -7,19 +8,17 @@ const roleMap = {
 };
 
 class Person{
-    role;
-    name;
-    age;
-    constructor(role, name, age) {
-        this.role = role;
-        this.name = name;
-        this.age = age;
+    constructor(person) {
+        this.person = person;
     }
-    updateInfo(){
-
+    updateInfo(person){
+        this.person = {
+            ...this.person,
+            person
+        };
     }
     getInfo(msg){
-        return `你好,我叫${this.name},今年${this.age}岁,我是一名${roleMap[this.role]},${msg}`;
+        return `你好,我叫${this.person.name},今年${this.person.age}岁,我是一名${roleMap[this.person.role]},${msg}`;
     }
     say(msg){
         console.log(this.getInfo(msg));
@@ -35,3 +34,9 @@ pStudent.say("你好，很高兴遇见你");
 pTeacher.say("你好，很高兴遇见你");
 pWorker.say("你好，很高兴遇见你");
 pEngineer.say("你好，很高兴遇见你");
+
+
+pTeacher.updateInfo({
+    name: "红太狼"
+});
+pTeacher.say("你好，很高兴遇见你");
